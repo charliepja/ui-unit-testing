@@ -62,10 +62,22 @@ describe('calculator functionality', function() {
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('0.5')
 	})
-	//
-	// it('should work with large numbers', function() {
-	//
-	// })
+
+	it('should work with large numbers', function() {
+		running_total = element(by.css('#running_total'))
+		element(by.css('#number1')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#operator_multiply')).click();
+		element(by.css('#number1')).click();
+		element(by.css('#number0')).click();
+		element(by.css('#operator_equals')).click();
+		expect(running_total.getAttribute('value')).to.eventually.equal('10000000')
+	})
 	//
 	// it('should result in error when dividing by 0', function() {
 	//
