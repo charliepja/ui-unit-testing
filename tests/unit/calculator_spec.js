@@ -35,4 +35,10 @@ describe('calculator', function () {
 		assert.equal(3, calculator.runningTotal)
 	})
 
+	it('it can concatenate two numbers', function() {
+		calculator.numberClick(1);
+		calculator.numberClick(7);
+		assert.equal(17, calculator.runningTotal)
+	})
+
 });
